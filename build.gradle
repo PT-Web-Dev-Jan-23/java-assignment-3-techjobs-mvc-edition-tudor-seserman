@@ -28,6 +28,10 @@ test {
 	jvmArgs "-javaagent:${classpath.find { it.name.contains("jmockit") }.absolutePath}"
 }
 
+springBoot {
+	mainClassName = 'org.launchcode.techjobs.mvc.Application'
+}
+
 // required so we can check parameter names in autograding tests
 compileTestJava {
 	options.compilerArgs=["-parameters"]
